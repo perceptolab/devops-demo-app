@@ -1,0 +1,46 @@
+application:
+  title: PerceptoLab DevOps Demo
+  version: 0.0.1-SNAPSHOT
+spring:
+  application:
+    name: plab-devopsdemo
+  datasource:
+    name: postgresql
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:postgres}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS}
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+feign:
+  metrics:
+    enabled: true
+  client:
+    config:
+      gorest:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    web:
+      client:
+        request:
+          autotime:
+            enabled: true
+            percentiles-histogram: true
+      server:
+        request:
+          autotime:
+            enabled: true
+            percentiles-histogram: true
