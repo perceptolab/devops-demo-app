@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "6987c223-a2ee-4b36-ad9d-08411593c6eb",
+		"name": "DevOps Demo App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Actuator",
+			"item": [
+				{
+					"name": "Health",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/actuator/health",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prometheus Metrics",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/actuator/prometheus",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"actuator",
+								"prometheus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Main",
+			"item": [
+				{
+					"name": "Add to counter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/counter",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"counter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove from counter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/counter",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"counter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "System status",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/status",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "External",
+			"item": [
+				{
+					"name": "Get GoRest users",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/ext/users",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"ext",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get GoRest posts",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/ext/posts",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"ext",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Database",
+			"item": [
+				{
+					"name": "Get all app users",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/db/users",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"db",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get app user by ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/db/users/1",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"db",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete app user by ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/db/users/1",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"db",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add an app user",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pippo\",\n    \"email\": \"pippo@baudo.it\",\n    \"phone\": \"123456789\"\n}\n"
+						},
+						"url": {
+							"raw": "{{schema}}://{{endpoint}}:{{port}}/api/db/users",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"db",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

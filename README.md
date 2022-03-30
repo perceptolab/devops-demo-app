@@ -47,6 +47,10 @@ The app has some parameters which can be configured via environment variables wh
 | `DB_USER` | PostgreSQL username      | String | `postgres`  | No       |
 | `DB_PASS` | PostgreSQL user password | String | N/A         | Yes      |
 
+## Using the APIs
+In order to simplify the manual testing of the APIs, a Postman collection has been created ready to be imported in the client.
+You can find the JSON file under [the docs folder](docs/postman_collection.json).
+
 ## API Reference
 All APIs accept `application/json` content type and return the same.
 
