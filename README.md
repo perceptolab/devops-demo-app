@@ -1,5 +1,7 @@
 # Perceptolab S.r.l. - DevOps Demo App
 
+[![DevOps Demo App - CD](https://github.com/perceptolab/devops-demo-app/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/perceptolab/devops-demo-app/actions/workflows/release.yml)
+
 This demo service is designed to enable the DevOps Engineer to easily build, test and monitor it via the common CNCF/OSS
 solutions available. The service is built around the Spring Boot framework, along with some modules for JPA, monitoring
 and HTTP client usage.
