@@ -34,7 +34,7 @@ To run the image as a container using Docker or Podman:
 $ docker run -p 8080:8080 -e DB_PASS=<value> devopsdemo:<version>
 ```
 The only exposed port by the container is the `8080` and is mapped as an HTTP-only port (HTTP/1.1).
-Remember that the service will try to connect to a PostgreSQL instance, and if it doesn't connect it will not work.
+Remember that the service will try to connect to a PostgreSQL instance, and if it doesn't it will not work.
 
 ## Configuration
 The app has some parameters which can be configured via environment variables while deploying it:
@@ -48,6 +48,8 @@ The app has some parameters which can be configured via environment variables wh
 | `DB_PASS` | PostgreSQL user password | String | N/A         | Yes      |
 
 ## API Reference
+All APIs accept `application/json` content type and return the same.
+
 | Endpoint               | Description                          | Method     | Accepts        | Type              |
 |------------------------|--------------------------------------|------------|----------------|-------------------|
 | `/api/counter`         | Add 1 and return a Long counter      | PUT        | N/A            | Long              |
