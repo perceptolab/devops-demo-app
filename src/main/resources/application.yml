@@ -1,6 +1,9 @@
 application:
   title: PerceptoLab DevOps Demo
-  version: 0.0.1-SNAPSHOT
+  version: 0.0.1
+server:
+  error:
+    include-stacktrace: on_param
 spring:
   application:
     name: plab-devopsdemo

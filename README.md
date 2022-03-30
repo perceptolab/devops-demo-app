@@ -1,6 +1,6 @@
 # Perceptolab S.r.l. - DevOps Demo App
 
-[![DevOps Demo App - CI](https://github.com/perceptolab/devops-demo-app/actions/workflows/integration.yml/badge.svg?branch=main)](https://github.com/perceptolab/devops-demo-app/actions/workflows/integration.yml)
+[![DevOps Demo App - CI](https://github.com/perceptolab/devops-demo-app/actions/workflows/integration.yml/badge.svg?branch=dev)](https://github.com/perceptolab/devops-demo-app/actions/workflows/integration.yml)
 [![DevOps Demo App - CD](https://github.com/perceptolab/devops-demo-app/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/perceptolab/devops-demo-app/actions/workflows/release.yml)
 
 This demo service is designed to enable the DevOps Engineer to easily build, test and monitor it via the common CNCF/OSS
@@ -34,7 +34,7 @@ To run the image as a container using Docker or Podman:
 $ docker run -p 8080:8080 -e DB_PASS=<value> devopsdemo:<version>
 ```
 The only exposed port by the container is the `8080` and is mapped as an HTTP-only port (HTTP/1.1).
-Remember that the service will try to connect to a PostgreSQL instance, and if it doesn't connect it will not work.
+Remember that the service will try to connect to a PostgreSQL instance, and if it doesn't it will not work.
 
 ## Configuration
 The app has some parameters which can be configured via environment variables while deploying it:
@@ -47,7 +47,13 @@ The app has some parameters which can be configured via environment variables wh
 | `DB_USER` | PostgreSQL username      | String | `postgres`  | No       |
 | `DB_PASS` | PostgreSQL user password | String | N/A         | Yes      |
 
+## Using the APIs
+In order to simplify the manual testing of the APIs, a Postman collection has been created ready to be imported in the client.
+You can find the JSON file under [the docs folder](docs/postman_collection.json).
+
 ## API Reference
+All APIs accept `application/json` content type and return the same.
+
 | Endpoint               | Description                          | Method     | Accepts        | Type              |
 |------------------------|--------------------------------------|------------|----------------|-------------------|
 | `/api/counter`         | Add 1 and return a Long counter      | PUT        | N/A            | Long              |
