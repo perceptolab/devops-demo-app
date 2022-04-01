@@ -40,7 +40,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Retrieve project version
         run: echo "IMAGE_TAG=$(./gradlew properties --no-daemon --console=plain -q | grep "^version:" | awk '{printf $2}')" >> $GITHUB_ENV
-      - name: Retag built Docker image
+      - name: Retag versioned Docker image
         run: docker tag devopsdemo:${{ env.IMAGE_TAG }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-      - name: Push Docker image
+      - name: Retag latest Docker image
+        run: docker tag devopsdemo:${{ env.IMAGE_TAG }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+      - name: Push versioned Docker image
         run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+      - name: Push latest Docker image
+        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
