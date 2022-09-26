@@ -1,6 +1,6 @@
 application:
   title: PerceptoLab DevOps Demo
-  version: 0.0.2
+  version: 0.0.3-SNAPSHOT
 server:
   error:
     include-stacktrace: on_param
