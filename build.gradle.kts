@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.6.4"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.6.10"
-    kotlin("plugin.spring") version "1.6.10"
-    kotlin("plugin.jpa") version "1.6.10"
+    id("org.springframework.boot") version "2.7.4"
+    id("io.spring.dependency-management") version "1.0.14.RELEASE"
+    kotlin("jvm") version "1.7.10"
+    kotlin("plugin.spring") version "1.7.10"
+    kotlin("plugin.jpa") version "1.7.10"
 }
 
 group = "com.perceptolab"
@@ -16,7 +16,7 @@ repositories {
     mavenCentral()
 }
 
-extra["springCloudVersion"] = "2021.0.1"
+extra["springCloudVersion"] = "2021.0.4"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -34,7 +34,7 @@ dependencies {
     implementation("org.postgresql:postgresql")
 
     runtimeOnly("io.micrometer:micrometer-registry-prometheus")
-    runtimeOnly("io.github.openfeign:feign-micrometer:11.8")
+    runtimeOnly("io.github.openfeign:feign-micrometer:11.9.1")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
