@@ -13,7 +13,7 @@ of health and metrics data from it. This app is completely **stateless** and the
 ## Requisites
 The application needs some basic requirements in order to work properly:
 - Java **JRE 17** or greater
-- **256MB** of RAM
+- **512MB** of RAM
 - **PostgreSQL** Database access
 - Internet access (for Feign clients)
 
@@ -28,6 +28,7 @@ Build the OCI image using the included Gradle Wrapper:
 $ ./gradlew bootBuildImage
 ```
 This will build and tag the service image under the following naming: `devopsdemo:<version>`
+The build is made using [Paketo buildpacks](https://paketo.io/), any documentation is available on the dedicated site. 
 
 To run the image as a container using Docker or Podman:
 ```shell
